@@ -18,7 +18,7 @@ Compile it:
 doxygen Doxyfile
 ```
 
-## Generating the CHM file
+## Generating the CHM file (for Windows)
 
 Download the [HTML Help Workshop](https://www.microsoft.com/en-us/download/details.aspx?id=21138) and add the location of `hhc.exe`to your PATH.
 
