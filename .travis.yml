@@ -1,22 +1,12 @@
-sudo: false
+image: alpine
 
-branches:
-  only:
-    - master
-
-addons:
-  apt:
-    packages:
-      - doxygen
-      - graphviz
-
-script:
+pages:
+  script:
+  - apk update && apk add doxygen graphviz ttf-freefont
   - doxygen Doxyfile
-
-deploy:
-  provider: pages
-  skip_cleanup: true
-  local_dir: docs/html
-  github_token: $GH_REPO_TOKEN
-  on:
-    branch: master
+  - mv doc/html/ public/
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
